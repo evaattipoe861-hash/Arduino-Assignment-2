@@ -2,8 +2,8 @@
 
 ### Variables, Functions, LEDs, while Loops & Serial Monitor
 
-**Christian Nii Tackie**
-Index Number: 2526404698
+**Attipoe Eva Seyram**
+Index Number: 2526400356
 Programming C++ for Engineers Using Arduino — GCTU
 
 -----
