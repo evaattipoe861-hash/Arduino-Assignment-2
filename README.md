@@ -1,4 +1,9 @@
 # Arduino Uno Assignment 2
+**Attipoe Eva Seyram**
+
+Index Number: 2526400356
+
+Programming C++ for Engineers Using Arduino — GCTU
 
 ## Project
 Beeping Countdown Using a 7-Segment Display and Buzzer
@@ -23,9 +28,7 @@ This project demonstrates how an Arduino Uno controls a 7-segment display and a 
 
 ### Variables, Functions, LEDs, while Loops & Serial Monitor
 
-**Attipoe Eva Seyram**
-Index Number: 2526400356
-Programming C++ for Engineers Using Arduino — GCTU
+
 
 -----
 
@@ -98,6 +101,24 @@ This rewrites the countdown to start from 7 instead of 5.
 While both are used to execute blocks of code, their fundamental purposes and behaviours are entirely different. setup() is a built-in Arduino function that automatically executes exactly once as soon as the board powers up or resets. It is not dependent on a specific condition; it simply runs its contents from top to bottom to initialise hardware and settings, then hands control over to the rest of the program. A while loop, on the other hand, is a local control structure used to repeat a specific block of code an arbitrary number of times based purely on a condition. It checks its condition before every single pass and keeps looping continuously as long as that condition evaluates to true, and it can be placed anywhere within the code, including inside setup() or loop().
 
 -----
+**Question 2. Describe one bug or mistake you ran into while writing this program and how you fixed it.**
+
+One mistake I ran into was mixing up the variable names between the loop in setup() and the loop inside flashLED(). I initially used count in both places, which made the code confusing to read and harder to debug. I fixed it by renaming the counter inside flashLED() to i, keeping it clearly separate from the outer count variable in setup().
+
+**Question 3. If you wanted the program to count DOWN by 2 each step (5, 3, 1) instead of by 1, what would you change?**
+
+Inside the while loop, the line count = count - 1; would be changed to count = count - 2;. This would make the counter decrease by two on each pass, producing the sequence 5, 3, 1.
+
+**Question 4. If you wanted the LED to also stay ON for a final 5 seconds after the countdown completes, where in the code would you add this and what would the code look like?**
+
+This would be added after the while loop finishes but before (or after) the “=== Countdown Complete ===” message is printed, inside setup(). The code would look like this:
+
+```cpp
+Serial.println("=== Countdown Complete ===");
+digitalWrite(ledPin, HIGH);
+delay(5000);
+digitalWrite(ledPin, LOW);
+```
 
 ## Repository Files
 - `Assignment2.ino` – Arduino program.
